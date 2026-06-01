@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+#macOS
+.DS_Store
+
+#uv
+.lock
+uv.lock
+CACHEDIR.TAG
+pyvenv.config

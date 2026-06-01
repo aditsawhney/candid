@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Candid - Candidate Matcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="app">
+  <div class="topbar">
+    <div class="logo">candid<span>.</span></div>
+    <div class="topbar-divider"></div>
+    <span class="topbar-label">ATS Candidate Matcher</span>
+    <div class="topbar-right">
+      <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+        <span id="themeIcon">☽</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="search-panel">
+
+      <!-- Search -->
+      <div>
+        <div class="section-label">Search candidates</div>
+        <div class="search-box">
+          <textarea class="search-textarea" id="searchInput" placeholder="Paste a job description, or describe what you're looking for" rows="3"></textarea>
+          <div class="search-footer">
+            <span class="search-hint">Cmd+Enter to search</span>
+            <button class="search-btn" id="searchBtn" onclick="runSearch()">
+              <span id="searchBtnLabel">Search</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats (shown after search) -->
+      <div class="stats-row" id="statsRow" style="display:none">
+        <div class="stat-card">
+          <div class="stat-label">Resumes loaded</div>
+          <div class="stat-val" id="statTotal">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Qualified matches</div>
+          <div class="stat-val" id="statAvg">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Required skills</div>
+          <div class="stat-val" id="statTop">-</div>
+        </div>
+      </div>
+
+      <!-- Results table -->
+      <div class="results-wrap" id="resultsWrap">
+        <div class="results-header">
+          <span class="results-title" id="resultsTitle">No search yet</span>
+        </div>
+        <div id="tableWrap">
+          <div class="empty-state">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <p>Search candidates to see results</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resume library -->
+      <div class="upload-section">
+        <div class="upload-header">
+          <span class="section-label" style="margin:0">Resume library</span>
+          <span id="candidateCount" class="muted-text">0 candidates</span>
+        </div>
+        <div class="drop-area" id="dropArea"
+          onclick="document.getElementById('resumeInput').click()"
+          ondragover="handleDragOver(event)"
+          ondragleave="handleDragLeave(event)"
+          ondrop="handleDrop(event)">
+          <span class="drop-icon">↑</span>
+          <span class="drop-text">Drop PDFs here or click to upload</span>
+          <span class="drop-subtext">Duplicates are skipped automatically</span>
+        </div>
+        <input type="file" id="resumeInput" accept=".pdf" multiple onchange="handleFiles(this.files)"/>
+        <div class="upload-log" id="uploadLog"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Drawer overlay -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<!-- Candidate detail drawer -->
+<div class="drawer" id="drawer">
+  <div class="drawer-topbar" id="drawerTopbar"></div>
+  <div class="drawer-body" id="drawerBody"></div>
+</div>
+
+<footer>
+  <span>Built by Adit Sawhney &middot; <a href="https://github.com/aditsawhney" target="_blank">GitHub</a> &middot; <a href="https://www.linkedin.com/in/adit-sawhney-ab9175297/" target="_blank">LinkedIn</a></span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
