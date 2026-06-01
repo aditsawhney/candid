@@ -4,6 +4,8 @@ A resume-to-job matching system. Upload CVs once, store structured data in Postg
 
 Built with FastAPI, PostgreSQL, and Groq (`llama-3.3-70b-versatile`). No vector DB — matching is a structured extraction problem, not a semantic similarity one.
 
+**[Live demo →](https://candid-nx0c.onrender.com)**
+
 ---
 
 ## How it works
@@ -52,7 +54,7 @@ resume-filtering-system/
   alembic/           # migrations
   config.py          # reads .env
   ingest.py          # CLI: load a single resume
-  create_job.py      # CLI: create a job manually
+  create_job.py      # CLI: create a job manually    bulk_ingest.py     # CLI: load a folder of PDFs at once
 ```
 
 ## Setup
