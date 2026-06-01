@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:8000';
+const API = 'https://candid-nx0c.onrender.com';
 let allResults = [], currentJobId = null, totalCandidates = 0, requiredSkillCount = 0;
 
 const AVATAR_COLORS = [
