@@ -1,4 +1,4 @@
-const API = 'https://candid-nx0c.onrender.com';
+const API = '';
 let allResults = [], currentJobId = null, totalCandidates = 0, requiredSkillCount = 0;
 
 const AVATAR_COLORS = [

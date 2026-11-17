@@ -14,7 +14,5 @@ wheels/
 .DS_Store
 
 #uv
-.lock
-uv.lock
 CACHEDIR.TAG
 pyvenv.config
