@@ -4,7 +4,7 @@ import time
 import httpx
 from pathlib import Path
 
-API_URL = "https://candid-nx0c.onrender.com"
+API_URL = os.environ.get("API_URL", "https://candid-production-170bb4f7.up.railway.app")
 
 def ingest_folder(folder: str):
     pdfs = sorted(Path(folder).glob("*.pdf"))

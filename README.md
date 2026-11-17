@@ -2,7 +2,7 @@
 
 A resume-to-job matching system. Upload CVs once, store structured data in Postgres, rank candidates against job descriptions using SQL scoring.
 
-Built with FastAPI, PostgreSQL, and Groq (`llama-3.3-70b-versatile`). No vector DB — matching is a structured extraction problem, not a semantic similarity one.
+Built with FastAPI, PostgreSQL, and Groq (`openai/gpt-oss-120b`). No vector DB — matching is a structured extraction problem, not a semantic similarity one.
 
 **[Live demo →](https://candid-nx0c.onrender.com)**
 
@@ -27,7 +27,7 @@ Built with FastAPI, PostgreSQL, and Groq (`llama-3.3-70b-versatile`). No vector 
 |---|---|
 | Backend | FastAPI + SQLAlchemy |
 | Database | PostgreSQL |
-| LLM | Groq `llama-3.3-70b-versatile` |
+| LLM | Groq `openai/gpt-oss-120b` |
 | PDF parsing | pdfplumber |
 | Frontend | Vanilla HTML/CSS/JS |
 | Package manager | uv |
