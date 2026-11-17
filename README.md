@@ -4,7 +4,7 @@ A resume-to-job matching system. Upload CVs once, store structured data in Postg
 
 Built with FastAPI, PostgreSQL, and Groq (`openai/gpt-oss-120b`). No vector DB — matching is a structured extraction problem, not a semantic similarity one.
 
-**[Live demo →](https://candid-nx0c.onrender.com)**
+**[Live demo →](https://candid-production-170bb4f7.up.railway.app)**
 
 ---
 
