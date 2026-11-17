@@ -16,4 +16,4 @@ wheels/
 #uv
 CACHEDIR.TAG
 pyvenv.config
-Icon[\r]
+Icon?
